@@ -64,7 +64,6 @@ enum class Winner {
     EMPATE
 }
 
-
 fun main(){
     var computerChoice = Choice.SIN_ELECCION
     var playerChoice = Choice.SIN_ELECCION
@@ -90,12 +89,14 @@ fun main(){
         3 -> Choice.TIJERA
         else -> Choice.SIN_ELECCION
     }
+
     println("Tu eleccion es $playerChoice")
 
     if(playerChoice == Choice.SIN_ELECCION){
         println("Entrada no valida. Por favor ingresa solo numeros del 1 al 3")
         return
     }
+
     val randomNumber = (1..3).random()
     computerChoice = when (randomNumber){
         1 -> Choice.PIEDRA
@@ -103,6 +104,7 @@ fun main(){
         3 -> Choice. TIJERA
         else -> Choice.SIN_ELECCION
     }
+
     println("La computadora selecciono : $computerChoice")
     val winner = when {
         playerChoice == computerChoice -> Winner.EMPATE
